@@ -32,6 +32,11 @@ Submitted samples
 :   {{ project.num_samples }} sample{% if project.num_samples > 1 %}s{% endif %}
 {%- endif %}
 
+{% if project.sample_type -%}
+Sample type
+:   {{ project.sample_type }}
+{%- endif %}
+
 {% if project.num_lanes -%}
 {% if project.unit_type == "units" -%}
 Ordered sequencing units

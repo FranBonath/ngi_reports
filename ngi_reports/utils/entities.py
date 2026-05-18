@@ -636,6 +636,7 @@ class Project:
         self.skip_fastq = False
         self.user_ID = ""
         self.unit_type = ""
+        self.sample_type = ""
 
     def populate(self, log, organism_names, **kwargs):
         project = kwargs.get("project", "")
@@ -723,6 +724,7 @@ class Project:
             "library_construction_method"
         )
         self.library_prep_option = proj_details.get("library_prep_option", "")
+        self.sample_type = proj_details.get("sample_type", "")
 
         if "dds" in proj.get("delivery_type", "").lower():
             self.cluster = "dds"
