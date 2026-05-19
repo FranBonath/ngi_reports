@@ -930,7 +930,7 @@ class Project:
                         if total_reads > max_total_reads:
                             max_total_reads = total_reads
                 except (TypeError, KeyError):
-                    log.error(f"Could not calcluate average Q30 for sample {sample}")
+                    log.error(f"Could not calculate average Q30 for sample {sample}")
         else:
             for sample in sorted(self.samples.keys()):
                 total_reads = self.samples[sample].total_reads
