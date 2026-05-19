@@ -636,6 +636,7 @@ class Project:
         self.skip_fastq = False
         self.user_ID = ""
         self.unit_type = ""
+        self.sample_type = ""
 
     def populate(self, log, organism_names, **kwargs):
         project = kwargs.get("project", "")
@@ -723,6 +724,7 @@ class Project:
             "library_construction_method"
         )
         self.library_prep_option = proj_details.get("library_prep_option", "")
+        self.sample_type = proj_details.get("sample_type", "")
 
         if "dds" in proj.get("delivery_type", "").lower():
             self.cluster = "dds"
@@ -928,7 +930,7 @@ class Project:
                         if total_reads > max_total_reads:
                             max_total_reads = total_reads
                 except (TypeError, KeyError):
-                    log.error(f"Could not calcluate average Q30 for sample {sample}")
+                    log.error(f"Could not calculate average Q30 for sample {sample}")
         else:
             for sample in sorted(self.samples.keys()):
                 total_reads = self.samples[sample].total_reads

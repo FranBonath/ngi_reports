@@ -1,5 +1,8 @@
 # ngi_reports Version Log
 
+## 20260518.1
+Added sample_type to Project section of report
+
 ## 20260507.1
 Changed lane yield to only passed reads for ONT runs
 
